@@ -1,0 +1,37 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.pallete-gen {
+  @include content-container();
+  @include flex($jc: center, $d: column);
+  height: min-content;
+
+  & > h2 {
+    margin-bottom: 1rem;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include media($resolution: 992px) {
+      grid-template-columns: 1fr 3rem 1fr;
+      grid-template-areas: "picker type color-bar";
+    }
+
+    & > * {
+      height: 100%;
+    }
+  }
+  &__color-picker {
+    grid-area: "picker";
+  }
+  &__pallete-style {
+    grid-area: "type";
+
+    & > .pallete-gen__style {
+      height: 100%;
+    }
+  }
+  &__color-bar {
+    grid-area: "color-bar";
+  }
+}

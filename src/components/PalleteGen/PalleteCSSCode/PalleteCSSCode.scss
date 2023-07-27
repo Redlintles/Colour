@@ -1,0 +1,33 @@
+@import "../../../styles/variables";
+.pallete-css-code {
+  width: 100%;
+  height: 95%;
+  position: relative;
+  & > div {
+    background-color: #101010 !important;
+    height: 100%;
+    border: 1px solid $secondary-color !important;
+    border-radius: none !important;
+
+    & > code {
+      font-family: "Courier New", Courier, monospace !important;
+      user-select: none;
+
+      & > span:not(.token) + .token:not(.hexcode) {
+        color: #44f !important;
+      }
+      & > .pseudo-class {
+        color: #669900 !important;
+      }
+      & > .hexcode.color {
+        color: #ee9900 !important;
+      }
+    }
+  }
+
+  & > .copy-btn {
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.tab-container__tab {
+  @include flex();
+  height: 2rem;
+  border-right: 2px solid $secondary-color;
+  cursor: pointer;
+  width: 6.25rem;
+
+  & > * {
+    padding: 0.25rem;
+  }
+
+  & > p {
+    @include flex($ai: center, $jc: start);
+    white-space: nowrap;
+    width: 70%;
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    height: 100%;
+    transition: 0.5s;
+    font-weight: bold;
+    &:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+  }
+
+  & > button {
+    flex: 1;
+    @extend %danger-button;
+    height: 100%;
+    width: 30%;
+  }
+  &.active {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}

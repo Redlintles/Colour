@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.converter__main {
+  @include content-container($g: 1rem);
+  padding-bottom: 2rem;
+  .converter__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+
+    @include media($resolution: 992px) {
+      grid-template-columns: repeat(12, 1fr);
+      padding: 0 2rem;
+    }
+
+    & > * {
+      width: 100%;
+    }
+    .main {
+      &__color-picker {
+        grid-column: span 1;
+        @include flex($d: column);
+        @include media($resolution: 992px) {
+          grid-column: span 5;
+        }
+      }
+      &__blocks {
+        grid-column: span 1;
+        @include flex($d: column, $w: nowrap);
+        gap: 0.3rem;
+        @include media($resolution: 992px) {
+          grid-column: span 5;
+        }
+      }
+      .alpha-changer {
+        grid-column: span 1;
+        @include media($resolution: 992px) {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+  & > p {
+    @include text($fs: 0.95rem);
+  }
+}

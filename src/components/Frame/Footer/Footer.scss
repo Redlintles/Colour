@@ -1,0 +1,16 @@
+@import "../../../styles/variables";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $secondary-color;
+  background-color: $bg-color;
+  height: 100px;
+
+  &__copy {
+    color: $primary-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}

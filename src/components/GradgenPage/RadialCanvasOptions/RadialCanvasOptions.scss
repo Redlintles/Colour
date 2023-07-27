@@ -1,0 +1,30 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.options__center {
+  @include option_container;
+  justify-content: space-evenly;
+
+  & > span {
+    width: 100%;
+  }
+
+  .center__label {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    & > input {
+      @include input($bg: $bg-color);
+      text-align: center;
+      aspect-ratio: 1;
+      text-align: center;
+      padding: 0;
+      width: fit-content;
+      border: 1px solid $secondary-color;
+    }
+    & > span {
+      color: $primary-color;
+      font-size: 0.85rem;
+    }
+  }
+}

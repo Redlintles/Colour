@@ -1,0 +1,6 @@
+@import "../../../styles/mixins";
+
+.color-bar {
+  @include flex($d: column);
+  height: 100%;
+}

@@ -1,0 +1,98 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 1rem;
+  background-color: $bg-color;
+  border-bottom: 1px solid $secondary-color;
+  position: relative;
+
+  &__brand > a {
+    font-family: "Dancing Script", cursive;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  &__container {
+    @include flex($g: 1rem);
+    display: none;
+    @include media($resolution: 768px) {
+      display: flex;
+    }
+    .nav__links {
+      @include flex($g: 0.5rem);
+
+      & > a {
+        color: $primary-color;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .nav__select {
+      background-color: transparent;
+      color: $primary-color;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      & > option {
+        background-color: #101010;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+  &-responsive {
+    @include flex();
+    @include media($resolution: 768px) {
+      display: none;
+    }
+    z-index: 10;
+
+    &__toggler {
+      font-size: 1.2rem;
+      color: $primary-color;
+    }
+    &__container {
+      @include flex($d: column, $jc: flex-start);
+      overflow: hidden;
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      transition: opacity 0.5s ease, height 0.5s ease;
+
+      &.show {
+        height: 70vh;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &__links {
+      @include flex($d: column, $ai: flex-start);
+      background-color: $bg-color;
+      width: 100%;
+      border-top: 1px solid $secondary-color;
+      border-bottom: 1px solid $secondary-color;
+      text-align: left;
+
+      & > a {
+        width: 100%;
+        border-bottom: 1px solid $primary-color;
+        padding: 1rem 0.5rem;
+        color: $primary-color;
+        font-weight: bold;
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}

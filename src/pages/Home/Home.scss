@@ -1,0 +1,259 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.home {
+  @include content-container();
+  padding: 0;
+  &-banner {
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @include media($resolution: 992px) {
+      background-color: none;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      );
+    }
+    position: relative;
+    z-index: 2;
+
+    &__banner {
+      padding: 2rem;
+      @include flex($d: column);
+      text-align: center;
+      width: 100%;
+
+      @include media($resolution: 992px) {
+        @include flex($d: column, $ai: flex-start, $jc: flex-start);
+
+        text-align: left;
+        width: 70%;
+        min-height: 13.75rem;
+      }
+      z-index: 3;
+
+      & > h3 {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      & > p {
+        font-size: 0.85rem;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &.default {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.4)
+        ),
+        linear-gradient(45deg, #f4f, #44f, #40f);
+    }
+    &.converter {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.4)
+        ),
+        linear-gradient(45deg, #f90, #f90);
+    }
+    &.gradgen {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.4)
+        ),
+        radial-gradient(
+          circle at 0% 50%,
+          #f00,
+          #ff0,
+          #0f0,
+          #0ff,
+          #00f,
+          #f0f,
+          #f00
+        );
+    }
+    &.palletegen {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.4)
+        ),
+        conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    }
+  }
+
+  &-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    @include media($resolution: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    & > .home-link {
+      grid-column: span 1;
+      height: 15rem;
+      @include flex($ai: flex-end, $jc: flex-start);
+      padding: 0.5rem;
+      position: relative;
+      z-index: 1;
+      border: 1px solid $secondary-color;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      & > a {
+        color: white;
+        font-size: 1.2rem;
+        z-index: 3;
+        font-weight: bold;
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &:nth-child(1) {
+        &::after {
+          position: absolute;
+          content: "RGB <=> CMYK";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          background-image: linear-gradient(
+            to right,
+            #f00 0% calc(100% / 7 * 1),
+            #0f0 calc(100% / 7 * 1) calc(100% / 7 * 2),
+            #00f calc(100% / 7 * 2),
+            #0ff calc(100% / 7 * 4),
+            #f0f calc(100% / 7 * 4) calc(100% / 7 * 5),
+            #ff0 calc(100% / 7 * 5) calc(100% / 7 * 6),
+            #000 calc(100% / 7 * 6) calc(100% / 7 * 7)
+          );
+          font-size: 1.8rem;
+          font-family: "Dancing Script";
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
+        }
+      }
+      &:nth-child(2) {
+        &::after {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          height: 100%;
+          background-image: linear-gradient(
+            to right,
+            #f00,
+            #0f0,
+            #00f,
+            #0ff,
+            #f0f,
+            #ff0,
+            #000
+          );
+        }
+        .home-link__squares {
+          width: 100%;
+          @include flex($jc: space-around);
+
+          .home-link__grad {
+            width: 5rem;
+            aspect-ratio: 1;
+            z-index: 1;
+
+            &:nth-child(1) {
+              background-image: linear-gradient(
+                to right,
+                #f00,
+                #ff0,
+                #0f0,
+                #0ff,
+                #00f,
+                #f0f,
+                #f00
+              );
+            }
+
+            &:nth-child(2) {
+              border-radius: 50%;
+              background-image: radial-gradient(
+                circle at center,
+                #f00,
+                #ff0,
+                #0f0,
+                #0ff,
+                #00f,
+                #f0f,
+                #f00
+              );
+            }
+            &:nth-child(3) {
+              border-radius: 50%;
+              background-image: conic-gradient(
+                #f00,
+                #ff0,
+                #0f0,
+                #0ff,
+                #00f,
+                #f0f,
+                #f00
+              );
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          background-image: linear-gradient(
+            135deg,
+            #ea1e18 0% calc(100% / 5 * 1),
+            #18eadf calc(100% / 5 * 1) calc(100% / 5 * 2),
+            #1a63e9 calc(100% / 5 * 2) calc(100% / 5 * 3),
+            #ea9a18 calc(100% / 5 * 3) calc(100% / 5 * 4),
+            #18e965 calc(100% / 5 * 4) calc(100% / 5 * 5)
+          );
+        }
+      }
+    }
+  }
+}

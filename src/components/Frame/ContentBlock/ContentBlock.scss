@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+.content {
+  &__block {
+    color: $primary-color;
+    text-align: left;
+    padding: 0 1rem 1rem;
+    margin-bottom: 1rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $secondary-color;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+  }
+}

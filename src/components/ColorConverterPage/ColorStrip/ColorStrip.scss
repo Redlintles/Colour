@@ -1,0 +1,8 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.color-strip {
+  @include media($resolution: 992px) {
+    grid-column: span 2;
+  }
+}

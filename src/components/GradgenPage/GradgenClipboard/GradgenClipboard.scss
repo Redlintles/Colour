@@ -1,0 +1,54 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.grad-options__clipboard {
+  @include option_container();
+  max-width: 100%;
+
+  & > div {
+    @include flex();
+    position: relative;
+    overflow-x: hidden;
+    width: calc(90% - 0.5rem);
+    height: 1.5rem;
+    & > p {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      color: white;
+      animation: slide 10s 2s linear infinite;
+      padding-left: 0.5rem;
+      user-select: none;
+      white-space: nowrap;
+
+      span {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  & > button {
+    @include flex();
+    background-color: transparent;
+    color: white;
+    width: 10%;
+    font-size: 1.5rem;
+  }
+}
+
+.code {
+  &-function {
+    color: #ff4;
+  }
+  &-par {
+    color: #f00;
+  }
+  &-deg {
+    color: #f08;
+  }
+  &-percent {
+    color: #0f0;
+  }
+}

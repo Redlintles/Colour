@@ -1,0 +1,28 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.options {
+  &__direction-label {
+    @include option_container();
+
+    & > input {
+      @include input($w: min-content);
+      border: 1px solid $primary-color;
+      padding: 0 0.25rem;
+      text-align: center;
+    }
+
+    & > span {
+      font-size: 1rem;
+    }
+
+    & > div {
+      @include flex($jc: center, $ai: center);
+      color: $primary-color;
+      font-size: 1.5rem;
+      padding: 0.25rem;
+      border-radius: 50%;
+      border: 1px solid $secondary-color;
+    }
+  }
+}

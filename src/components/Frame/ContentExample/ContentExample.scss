@@ -1,0 +1,21 @@
+@import "../../../styles/mixins";
+
+.content__example {
+  @include flex($jc: flex-start, $ta: left);
+  gap: 0.5rem;
+  margin: 0.5rem;
+  width: fit-content;
+  padding-left: 1rem;
+
+  .example {
+    &__preview {
+      border: 1px solid $secondary-color;
+      width: 50px;
+      height: 50px;
+    }
+    &__text {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+}

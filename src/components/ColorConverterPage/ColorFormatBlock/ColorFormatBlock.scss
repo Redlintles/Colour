@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.color-block {
+  @include flex($jc: space-between);
+  @include media($resolution: 992px) {
+    height: 25%;
+  }
+  width: 100%;
+  background-color: $bg-color;
+  padding: 0.25rem 1rem;
+  border: 2px inset $secondary-color;
+  border-radius: 5px;
+
+  &__text,
+  &__input {
+    @include media($resolution: 992px) {
+      font-size: 1.2rem;
+    }
+    color: $primary-color;
+    font-weight: bold;
+
+    font-size: 1rem;
+    width: 80%;
+    text-align: left;
+  }
+
+  &__input {
+    background-color: transparent;
+    outline: none;
+    border: 0.5px solid $primary-color;
+    padding-left: 1rem;
+    height: 100%;
+  }
+
+  &__copy {
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: $primary-color;
+    height: min-content;
+    width: 20%;
+    text-align: right;
+  }
+}

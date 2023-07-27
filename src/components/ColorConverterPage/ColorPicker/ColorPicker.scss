@@ -1,0 +1,29 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.color-picker {
+  &__title {
+    color: $primary-color;
+  }
+  &__picker {
+    @include flex($d: column, $g: 2rem);
+    width: 100%;
+
+    @include media($resolution: 576px) {
+      @include flex($d: row, $g: 2rem);
+    }
+
+    @include media($resolution: 992px) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__canvas {
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+    @include media($resolution: 992px) {
+      grid-column: span 10;
+    }
+  }
+}

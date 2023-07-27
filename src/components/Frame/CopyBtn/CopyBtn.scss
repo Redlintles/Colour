@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+
+.copy-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: $primary-color;
+  height: min-content;
+  width: 20%;
+  text-align: right;
+
+  &__copied {
+    color: green;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.canvas-container {
+  position: relative;
+
+  &__canvas {
+    border: 1px solid $secondary-color;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    border: 1px solid $secondary-color;
+    background-color: #101010;
+    color: $primary-color;
+    font-size: 0.85rem;
+  }
+
+  &__preview {
+    @extend %preview;
+  }
+}

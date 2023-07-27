@@ -1,0 +1,16 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.grad-type {
+  @include flex($d: column, $jc: center, $ai: center);
+  div {
+    width: 100%;
+    @include flex($d: column, $jc: flex-start, $ai: center);
+
+    & > label {
+      width: 100%;
+      @include option_container();
+      @extend %radio-button;
+    }
+  }
+}

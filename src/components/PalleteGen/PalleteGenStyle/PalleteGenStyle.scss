@@ -1,0 +1,48 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.pallete-gen-form {
+  @include flex();
+  @include media($resolution: 992px) {
+    @include flex($d: column);
+    height: 100%;
+  }
+  border: 1px solid $secondary-color;
+
+  &__input {
+    @include flex($jc: center, $ai: center);
+
+    width: calc(100% / 4);
+    @include media($resolution: 768px) {
+      width: calc(100% / 8);
+      height: 100%;
+    }
+    @include media($resolution: 992px) {
+      width: 100%;
+      height: calc(100% / 8);
+    }
+    background-color: #101010;
+    aspect-ratio: 1;
+    cursor: pointer;
+    border: 1px solid $secondary-color;
+
+    &:is(:hover, :focus) {
+      border: 1px solid $primary-color;
+    }
+
+    & > span {
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    & > input {
+      display: none;
+    }
+
+    &.form-input--active {
+      background-color: $secondary-color;
+      border: 1px solid $primary-color;
+    }
+  }
+}

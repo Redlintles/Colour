@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.color__transparent {
+  height: 3rem;
+  width: 100%;
+  background-color: #888;
+  opacity: 0.5;
+  border: 1px solid $secondary-color;
+
+  &.active {
+    box-shadow: 0 0 0 4px #0a0 inset;
+  }
+}

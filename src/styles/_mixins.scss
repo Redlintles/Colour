@@ -1,0 +1,189 @@
+@import "./variables";
+
+@mixin flex($d: row, $w: wrap, $jc: center, $ai: center, $ta: center, $g: 0) {
+  display: flex;
+  flex-direction: $d;
+  flex-wrap: $w;
+  justify-content: $jc;
+  align-items: $ai;
+  text-align: $ta;
+  gap: $g;
+}
+
+@mixin media($type: "min-width", $resolution) {
+  @if $type == "min-width" {
+    @media (min-width: $resolution) {
+      @content;
+    }
+  } @else if $type == "max-width" {
+    @media (max-width: $resolution) {
+      @content;
+    }
+  }
+}
+
+@mixin input($w: 100%, $h: 2rem, $bg: transparent) {
+  appearance: none;
+  width: $w;
+  height: $h;
+  background-color: $bg;
+  outline: none;
+  padding-left: 0.5rem;
+  border: none;
+
+  &,
+  &::placeholder {
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
+
+@mixin text(
+  $fs: 0.9rem,
+  $color: $primary-color,
+  $w: 400,
+  $align: center,
+  $transform: unset
+) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $w;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+@mixin rangeInput() {
+  & > input[type="range"]::-webkit-slider-thumb,
+  & > input[type="”range”"]::-moz-range-thumb,
+  input[type="”range”"]::-ms-thumb {
+    color: red;
+  }
+}
+
+@mixin option_container($p: 1rem 0.5rem) {
+  @include flex($ai: center, $g: 0.5em, $jc: space-between);
+  padding: $p;
+  background-color: #101010;
+  border: 1px solid $secondary-color;
+  width: 100%;
+}
+
+@mixin btn(
+  $b: none,
+  $bg: transparent,
+  $c: white,
+  $p: none,
+  $m: none,
+  $fs: 1rem,
+  $fw: 400,
+  $t: false
+) {
+  border: $b;
+  background-color: $bg;
+  color: $c;
+  padding: $p;
+  margin: $m;
+  font-size: $fs;
+  font-weight: $fw;
+
+  @if $t {
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+%danger-button {
+  @include flex($jc: center, $ai: center);
+  @include btn($c: red, $fs: 1rem, $fw: 900);
+  background-color: $bg-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    transition: 0.5s;
+  }
+  &:hover::after {
+    background-color: #777;
+  }
+}
+
+@mixin content-container($w: 75vw, $g: 0) {
+  @include flex($d: column, $g: $g);
+  @include media($resolution: 768px) {
+    width: $w;
+    @include flex($d: row, $g: $g);
+  }
+
+  background-color: $bg-color;
+  border-radius: 10px;
+  border: 2px inset $secondary-color;
+  width: 95vw;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+%radio-button {
+  display: flex;
+  border: 1px solid $secondary-color;
+  align-items: center;
+  background-color: #101010;
+  gap: 0.5rem;
+
+  & > span {
+    font-size: 1rem;
+    color: $primary-color;
+    padding: 0 0.25rem;
+    text-align: center;
+  }
+
+  & > input[type="radio"] {
+    appearance: none;
+    border: 1px solid $secondary-color;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      background-image: url("../../public/check-lg.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      fill: $primary-color;
+    }
+
+    &:checked::before {
+      opacity: 1;
+    }
+  }
+}
+
+%preview {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: black;
+  width: $canvas-width;
+  height: $canvas-width;
+  border: 1px solid $secondary-color;
+}

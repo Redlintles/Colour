@@ -1,0 +1,21 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.options__trans-label {
+  @include option_container();
+
+  & > input[type="checkbox"] {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $secondary-color;
+    cursor: pointer;
+
+    &:checked {
+      background-image: url("../../../../public/check-lg.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}

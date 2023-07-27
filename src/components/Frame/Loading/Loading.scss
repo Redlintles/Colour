@@ -1,0 +1,90 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+@keyframes rotateUpper {
+  from {
+    rotate: z 0deg;
+  }
+  to {
+    rotate: z 360deg;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.loading {
+  @include flex($d: column);
+  width: 5rem;
+
+  &__upper {
+    @include flex();
+    width: 100%;
+    height: 5rem;
+    background-image: conic-gradient(
+      #f00 0% calc(100% / 6 * 1),
+      #ff0 calc(100% / 6 * 1) calc(100% / 6 * 2),
+      #0f0 calc(100% / 6 * 2) calc(100% / 6 * 3),
+      #0ff calc(100% / 6 * 3) calc(100% / 6 * 4),
+      #00f calc(100% / 6 * 4) calc(100% / 6 * 5),
+      #f0f calc(100% / 6 * 5) 100%
+    );
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    animation: rotateUpper 2s linear infinite;
+  }
+
+  &__banner {
+    width: 4rem;
+    height: 4rem;
+    background-image: url("../../../../public/colour_logo.png");
+    border-radius: 50%;
+    background-color: #101010;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid #ccc;
+  }
+
+  &__bottom {
+    margin-top: 1rem;
+    @include flex($g: 0.5rem);
+  }
+
+  &__jumper {
+    width: 0.75rem;
+    aspect-ratio: 1;
+    animation: jump 1s ease infinite;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+
+    &#jumper-1 {
+      background-color: #f00;
+      animation-delay: 0.25s;
+    }
+    &#jumper-2 {
+      background-color: #0f0;
+      animation-delay: 0.5s;
+    }
+    &#jumper-3 {
+      background-color: #00f;
+      animation-delay: 0.75s;
+    }
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
