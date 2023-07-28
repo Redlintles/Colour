@@ -70,7 +70,7 @@
 
       @include media($resolution: 992px) {
         & > .home-banner__banner {
-          background-image: url("../../../public/colour_logo.png");
+          background-image: url("../../assets/colour_logo.png");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: right center;

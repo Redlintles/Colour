@@ -12,7 +12,7 @@ export function useLoadImages(canvasRef: RefObject<HTMLCanvasElement>) {
       if (ctx) {
         const img: HTMLImageElement = new Image();
 
-        img.src = "/transparent.png";
+        img.src = "../assets/transparent.png";
         img.onload = () => {
           if (ctx) {
             const ptn = ctx.createPattern(img, "repeat");

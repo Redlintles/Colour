@@ -10,6 +10,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { supportedLanguages } from "data/SupportedLanguages";
 import { Language } from "../../../data/SupportedLanguages";
 
+import logo from "../../../assets/colour_logo.png";
+
 function Header() {
   const { data, setData } = useContext(PageTextContext);
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -31,7 +33,7 @@ function Header() {
     <header className="nav">
       <div className="nav__brand">
         <Link to="/Colour/">
-          <img src="colour_logo.png" alt="Logo do Site" />
+          <img src={logo} alt="Logo" />
           <h1>Colour</h1>
         </Link>
       </div>
