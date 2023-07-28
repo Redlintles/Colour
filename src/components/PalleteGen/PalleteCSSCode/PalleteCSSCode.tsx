@@ -9,8 +9,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CopyBtn from "../../Frame/CopyBtn/CopyBtn";
 
-console.log(dark, { dark });
-
 function PalleteCSSCode() {
   const { colorBarData: data } = useContext(ColorBarContext);
 

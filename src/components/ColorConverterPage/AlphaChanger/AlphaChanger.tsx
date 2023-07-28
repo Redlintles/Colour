@@ -35,8 +35,6 @@ function AlphaChanger() {
 
         formatted.alpha = a;
 
-        console.log(formatted.toString());
-
         setColor({
           color: formatted.toString(),
           modifiedBy: "alpha",

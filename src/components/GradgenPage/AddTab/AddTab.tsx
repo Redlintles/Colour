@@ -31,7 +31,7 @@ function AddTab({ setGradientTabs, gradientTabs, toggler }: Props) {
 
   function addTab() {
     createdNewTab = true;
-    console.log(newTab);
+
     setGradientTabs((prev: tabArr) => {
       return [...prev, newTab];
     });
@@ -46,9 +46,7 @@ function AddTab({ setGradientTabs, gradientTabs, toggler }: Props) {
     }
   }, [gradientTabs, setActiveTab, toggler]);
 
-  useEffect(() => {
-    console.log(newTab);
-  }, [newTab]);
+  useEffect(() => {}, [newTab]);
   return (
     <>
       <div className="add-tab">
@@ -61,7 +59,6 @@ function AddTab({ setGradientTabs, gradientTabs, toggler }: Props) {
             id=""
             placeholder={data.gradientPage.addTabText.namePlaceholder}
             onChange={(e) => {
-              console.log(e.target.value !== "", e.target.value);
               setNewTab((prev: Tab) => {
                 return {
                   ...prev,

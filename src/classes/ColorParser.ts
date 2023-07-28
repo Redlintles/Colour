@@ -204,8 +204,6 @@ class ColorParser implements ColorParser {
     color = color.slice(1);
     const colorComponents = [];
 
-    console.log(color);
-
     if ([3, 4].includes(color.length)) {
       let extended = "";
       for (let i of color) {

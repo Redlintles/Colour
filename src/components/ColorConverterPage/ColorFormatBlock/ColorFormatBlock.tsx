@@ -42,7 +42,7 @@ function ColorFormatBlock({ color, type }: Props) {
       validateHSL(newColor),
       validateRGB(newColor),
     ].some((item) => item);
-    console.log(test);
+
     if (test) {
       const parser = new ColorParser(newColor);
       setColor({

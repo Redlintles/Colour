@@ -25,7 +25,6 @@ function GradgenClipboard() {
           list.push(<span className="code-par">{match[2]}</span>);
           list.push(<span className="code-deg">{match[3]}</span>);
           for (let i of colorMatches) {
-            console.log(i[1]);
             if (i[1] !== "transparent") {
               list.push(<span style={{ color: i[1] }}>{i[1]} </span>);
             } else {
