@@ -80,7 +80,7 @@ function PalleteGenPicker() {
           }}
           className="picker-buttons__btn"
         >
-          Lista de Cores
+          {data.palletePage.pickerButtons[0]}
         </button>
         <button
           onClick={() => {
@@ -89,7 +89,7 @@ function PalleteGenPicker() {
           }}
           className="picker-buttons__btn"
         >
-          Código CSS
+          {data.palletePage.pickerButtons[1]}
         </button>
         <button
           onClick={() => {
@@ -106,7 +106,9 @@ function PalleteGenPicker() {
           }}
           className="picker-buttons__btn"
         >
-          {pallete.saturationGrad ? "Lightness" : "Saturation"}
+          {pallete.saturationGrad
+            ? data.palletePage.pickerButtons[2][0]
+            : data.palletePage.pickerButtons[2][1]}
         </button>
       </div>
     </div>

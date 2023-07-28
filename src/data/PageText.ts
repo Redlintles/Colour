@@ -59,6 +59,7 @@ interface PalletePageText {
   textContent: PageTextContent;
   colorListTitle: string;
   cssCopyTitle: string;
+  pickerButtons: [string, string, [string, string]];
 }
 
 export interface Data {
@@ -154,6 +155,11 @@ const dataPT: Data = {
     },
     cssCopyTitle: "Código CSS",
     colorListTitle: "Lista de Cores",
+    pickerButtons: [
+      "Lista de Cores",
+      "Código CSS",
+      ["Saturação", "Luminosidade"],
+    ],
   },
   canvasNotSupported: "Canvas Não Suportado",
   gradientPage: {
@@ -356,6 +362,7 @@ const dataEN: Data = {
     },
     cssCopyTitle: "Copy CSS",
     colorListTitle: "Color List",
+    pickerButtons: ["Color List", "CSS Code", ["Saturation", "Lightness"]],
   },
 
   canvasNotSupported: "Canvas Not Supported",
