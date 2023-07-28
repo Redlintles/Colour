@@ -5,9 +5,11 @@ function HomeBannerDefault() {
   const { data } = useContext(PageTextContext);
   return (
     <div className="home-banner__banner">
-      <h3>{data.home.bannerDefault.title}</h3>
-      <p>{data.home.bannerDefault.txt1}</p>
-      <p>{data.home.bannerDefault.txt2}</p>
+      <div className="banner__left">
+        <h3>{data.home.bannerDefault.title}</h3>
+        <p>{data.home.bannerDefault.txt1}</p>
+        <p>{data.home.bannerDefault.txt2}</p>
+      </div>
     </div>
   );
 }

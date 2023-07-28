@@ -31,6 +31,7 @@ function Header() {
     <header className="nav">
       <div className="nav__brand">
         <Link to="/Colour/">
+          <img src="colour_logo.png" alt="Logo do Site" />
           <h1>Colour</h1>
         </Link>
       </div>

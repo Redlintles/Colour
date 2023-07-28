@@ -21,32 +21,43 @@
     z-index: 2;
 
     &__banner {
-      padding: 2rem;
+      padding: 2rem 1rem;
       @include flex($d: column);
       text-align: center;
       width: 100%;
 
-      @include media($resolution: 992px) {
-        @include flex($d: column, $ai: flex-start, $jc: flex-start);
+      .banner__left {
+        @include flex($d: column);
+        text-align: center;
 
-        text-align: left;
-        width: 70%;
-        min-height: 13.75rem;
-      }
-      z-index: 3;
+        min-height: 10rem;
+        height: 100%;
 
-      & > h3 {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
+        @include media($resolution: 992px) {
+          text-align: left;
+          @include flex($d: column, $ai: flex-start, $jc: flex-start);
+          width: 80%;
+        }
 
-      & > p {
-        font-size: 0.85rem;
+        & > h3 {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+        }
 
-        &:not(:last-child) {
-          margin-bottom: 1rem;
+        & > p {
+          font-size: 0.85rem;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
         }
       }
+
+      @include media($resolution: 992px) {
+        @include flex($ai: flex-start, $jc: flex-start);
+        padding: 2rem;
+      }
+      z-index: 3;
     }
 
     &.default {
@@ -56,6 +67,15 @@
           rgba(0, 0, 0, 0.4)
         ),
         linear-gradient(45deg, #f4f, #44f, #40f);
+
+      @include media($resolution: 992px) {
+        & > .home-banner__banner {
+          background-image: url("../../../public/colour_logo.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right center;
+        }
+      }
     }
     &.converter {
       background-image: linear-gradient(

@@ -10,9 +10,15 @@
   position: relative;
 
   &__brand > a {
+    @include flex($g: 0.5rem);
     font-family: "Dancing Script", cursive;
     color: $primary-color;
     font-weight: bold;
+
+    img {
+      max-width: 2rem;
+      object-fit: 1;
+    }
   }
 
   &__container {
