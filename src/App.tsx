@@ -25,12 +25,13 @@ function App() {
             <ColorBarContextProvider>
               <Suspense fallback={<Loading />}>
                 <Routes>
-                  <Route path="/" element={<Home />} />
-
-                  <Route path="/converter" element={<ColorConverter />} />
-
-                  <Route path="/gradgen" element={<Gradgen />} />
-                  <Route path="palletegen" element={<PalleteGen />} />
+                  <Route path="/Colour/" element={<Home />} />
+                  <Route
+                    path="/Colour/converter"
+                    element={<ColorConverter />}
+                  />
+                  <Route path="/Colour/gradgen" element={<Gradgen />} />
+                  <Route path="/Colour/palletegen" element={<PalleteGen />} />
                 </Routes>
               </Suspense>
             </ColorBarContextProvider>

@@ -53,7 +53,7 @@ function Home() {
             onMouseOver={() => bannerClassManager("converter")}
             onMouseOut={() => bannerClassManager("default")}
           >
-            <Link className="home-link__link" to="/converter">
+            <Link className="home-link__link" to="/Colour/converter">
               {data.converterPage.title}
             </Link>
           </div>
@@ -69,7 +69,7 @@ function Home() {
               <div className="home-link__grad"></div>
               <div className="home-link__grad"></div>
             </div>
-            <Link className="home-link__link" to="/gradgen">
+            <Link className="home-link__link" to="/Colour/gradgen">
               {data.routes[1]}
             </Link>
           </div>
@@ -80,7 +80,7 @@ function Home() {
             onMouseOver={() => bannerClassManager("palletegen")}
             onMouseOut={() => bannerClassManager("default")}
           >
-            <Link className="home-link__link" to="/palletegen">
+            <Link className="home-link__link" to="/Colour/palletegen">
               {data.palletePage.title}
             </Link>
           </div>

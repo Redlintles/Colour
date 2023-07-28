@@ -30,15 +30,15 @@ function Header() {
   return (
     <header className="nav">
       <div className="nav__brand">
-        <Link to="/">
+        <Link to="/Colour/">
           <h1>Colour</h1>
         </Link>
       </div>
       <div className="nav__container">
         <nav className="nav__links">
-          <NavLink to="/converter">{data.routes[0]}</NavLink>
-          <NavLink to="/gradgen">{data.routes[1]}</NavLink>
-          <NavLink to="/palleteGen">{data.routes[2]}</NavLink>
+          <NavLink to="/Colour/converter">{data.routes[0]}</NavLink>
+          <NavLink to="/Colour/gradgen">{data.routes[1]}</NavLink>
+          <NavLink to="/Colour/palleteGen">{data.routes[2]}</NavLink>
         </nav>
 
         <select
@@ -68,13 +68,13 @@ function Header() {
             className="nav-responsive__links"
             onClick={() => setShowNav(!showNav)}
           >
-            <NavLink onClick={() => setShowNav(false)} to="/converter">
+            <NavLink onClick={() => setShowNav(false)} to="/Colour/converter">
               {data.routes[0]}
             </NavLink>
-            <NavLink onClick={() => setShowNav(false)} to="/gradgen">
+            <NavLink onClick={() => setShowNav(false)} to="/Colour/gradgen">
               {data.routes[1]}
             </NavLink>
-            <NavLink onClick={() => setShowNav(false)} to="/palleteGen">
+            <NavLink onClick={() => setShowNav(false)} to="/Colour/palleteGen">
               {data.routes[2]}
             </NavLink>
           </nav>
