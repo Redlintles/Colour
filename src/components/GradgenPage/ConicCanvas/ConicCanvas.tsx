@@ -72,8 +72,6 @@ function ConicCanvas() {
       }
     }
 
-    console.log(grad);
-
     setTab((prev: Tab) => {
       return {
         ...prev,
@@ -314,10 +312,9 @@ function ConicCanvas() {
       <div className="canvas-container">
         {screenWidth.width < screenWidth.sm && (
           <canvas
-            className="canvas-container__canvas"
+            className="canvas-container__canvas conic"
             width="250"
             height="250"
-            style={{ transform: "rotate(-90deg)" }}
             ref={canvasRef}
           >
             <p>{data.canvasNotSupported}</p>
@@ -325,10 +322,9 @@ function ConicCanvas() {
         )}
         {screenWidth.width >= screenWidth.sm && (
           <canvas
-            className="canvas-container__canvas"
+            className="canvas-container__canvas conic"
             width="300"
             height="300"
-            style={{ transform: "rotate(-90deg)" }}
             ref={canvasRef}
           >
             <p>{data.canvasNotSupported}</p>

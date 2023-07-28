@@ -113,6 +113,22 @@
           }
         }
       }
+
+      &__grad-creator {
+        .canvas-container {
+          &__canvas {
+            border: 2px solid $secondary-color;
+            &.conic {
+              transform-origin: center center;
+              transform: rotate(-90deg);
+            }
+          }
+          &__preview {
+            width: 100%;
+            aspect-ratio: 1;
+          }
+        }
+      }
     }
   }
 }

@@ -31,8 +31,8 @@ function RadialCanvas() {
   const { transparentPattern } = useLoadImages(canvasRef);
 
   function circleRadius(x: number, y: number, width: number, height: number) {
-    let origin = [width, height];
-    const eq = (x - origin[0]) ** 2 + (y - origin[1]) ** 2;
+    let center = [width / 2, height / 2];
+    const eq = (x - center[0]) ** 2 + (y - center[1]) ** 2;
     return Math.sqrt(eq);
   }
 
@@ -115,7 +115,7 @@ function RadialCanvas() {
 
     if (circleArr.length === 1) {
       let { color } = circleArr[0];
-      console.log(grad);
+
       grad += `${color}, ${color})`;
 
       return setTab((prev: Tab) => {
@@ -146,7 +146,7 @@ function RadialCanvas() {
         }
       }
     }
-    console.log(grad);
+
     setTab((prev: Tab) => {
       return {
         ...prev,
@@ -253,7 +253,6 @@ function RadialCanvas() {
   /* eslint-enable */
 
   useEffect(() => {
-    console.log(tab.selectedColor);
     if (tab.selectedColor) {
       selectedColor = tab.selectedColor;
     } else {
@@ -300,12 +299,22 @@ function RadialCanvas() {
   return (
     <div className="canvas-container">
       {screenWidth.width < screenWidth.sm && (
-        <canvas width="250" height="250" ref={canvasRef}>
+        <canvas
+          width="250"
+          height="250"
+          ref={canvasRef}
+          className="canvas-container__canvas"
+        >
           <p>{data.canvasNotSupported}</p>
         </canvas>
       )}
       {screenWidth.width >= screenWidth.sm && (
-        <canvas width="300" height="300" ref={canvasRef}>
+        <canvas
+          width="300"
+          height="300"
+          ref={canvasRef}
+          className="canvas-container__canvas"
+        >
           <p>{data.canvasNotSupported}</p>
         </canvas>
       )}
@@ -323,7 +332,11 @@ function RadialCanvas() {
           {data.gradientPage.canvasButtonsText[2]}
         </button>
       </div>
-      <div className="preview hide" ref={previewRef} onClick={removePrev}></div>
+      <div
+        className="canvas-container__preview hide"
+        ref={previewRef}
+        onClick={removePrev}
+      ></div>
     </div>
   );
 }

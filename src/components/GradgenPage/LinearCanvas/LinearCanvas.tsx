@@ -66,8 +66,6 @@ function LinearCanvas() {
 
     grad = grad.replace(/,\s$/, ")");
 
-    console.log(grad);
-
     setTab((prev: Tab) => {
       return {
         ...prev,
