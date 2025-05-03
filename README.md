@@ -1,15 +1,53 @@
 # Colour
 Projeto de gerenciador de cores utilizando React
 
+
+## História do projeto
+
+Este projeto foi o meu primeiro projeto utilizando React logo após terminar um curso sobre a tecnologia,
+eu não tinha nenhuma noção de Web Design na época. porém, eu já tinha demonstrado algum interesse na Canvas API do HTML.
+
+Assim, resolvi unir o útil ao agradável, o desafio era criar um projeto de um gerenciador de cores inspirado no Color.adobe.com
+
+## O que eu Aprendi
+
+- Aprimorei o meu conhecimento básico sobre o React(Hooks, Componentes,JSX, etc)
+- Desenhar no HTML Canvas usando Javascript via Canvas API
+- Integrar o uso do Canvas com o React através do uso de Refs
+- Ciclos trigonométricos para conseguir desenhar círculos e setores circulares no Canvas
+- Utilizar a Clipboard API do Javascript para implementar uma funcionalidade de Copiar e Colar
+- Implementar um sistema de guias similar ao navegador para permitir vários degradês ao mesmo tempo
+- Princípios básicos de teoria das cores e criação de paletas
+- Algorítimos de conversão entre diferentes formatos de representação de cores(HEX,RGB,CMYK,HSL)
+- Aprendi a implementar suporte a vários idiomas diferentes na mesma página.
+- Desenvolver uma breve explicação sobre cada formato de cor, tipo diferente de degradê e tipo diferente de paleta
+- Desenvolvimento de páginas responsivas utilizando React
+- Hospedar projetos feitos com React utilizando Github Pages
+
+###As principais Libs e tecnologias usadas neste projeto foram:
+
+`react` `react-syntax-highlighter` `react-markdown` `react-icons` `react-router` `sass` `typescript`
+
+___
+## Falhas do projeto
+
+- Web design terrível, Muitas bordas arredondadas, escolha de fonte, espaçamentos e tamanho dos elementos inconsistentes
+- Design de interface pouco intuitivo e confuso, novos usuários podem ter dificuldade ao utilizar a plataforma
+
+___
+
+## Como executar o projeto
+
 Para rodar este projeto localmente, simplesmente clone o repositório e rode nessa sequência os comandos:
 ```bash
 npm install
 npm run start
 ```
 
-As principais Libs e tecnologias usadas neste projeto foram:
+Ele também está disponível neste [Link](https://redlintles.github.io/Colour/).
+___
 
-`react` `react-syntax-highlighter` `react-markdown` `react-icons` `react-router` `sass` `typescript`
+## Descrição do projeto
 
 **Este Projeto Não rodará apropriadamente se o navegador não possuir suporte a HTML Canvas.**
 
