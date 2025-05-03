@@ -1,11 +1,19 @@
 # Colour
 Projeto de gerenciador de cores utilizando React
 
+# Resumo Do Projeto
+
+Colour é um gerenciador de cores interativo feito com React e TypeScript.
+Ele oferece ferramentas para converter cores entre múltiplos formatos (RGB, HEX, HSL, CMYK),
+criar degradês visuais e gerar paletas com base em princípios da teoria das cores.
+Tudo isso com renderização via HTML Canvas e suporte a múltiplos idiomas.
+
 
 ## História do projeto
 
 Este projeto foi o meu primeiro projeto utilizando React logo após terminar um curso sobre a tecnologia,
-eu não tinha nenhuma noção de Web Design na época. porém, eu já tinha demonstrado algum interesse na Canvas API do HTML.
+Na época, eu ainda não possuía conhecimento em Web Design, o que influenciou negativamente o design visual do projeto,
+porém, eu já tinha demonstrado algum interesse na Canvas API do HTML.
 
 Assim, resolvi unir o útil ao agradável, o desafio era criar um projeto de um gerenciador de cores inspirado no Color.adobe.com
 
@@ -18,20 +26,21 @@ Assim, resolvi unir o útil ao agradável, o desafio era criar um projeto de um 
 - Utilizar a Clipboard API do Javascript para implementar uma funcionalidade de Copiar e Colar
 - Implementar um sistema de guias similar ao navegador para permitir vários degradês ao mesmo tempo
 - Princípios básicos de teoria das cores e criação de paletas
-- Algorítimos de conversão entre diferentes formatos de representação de cores(HEX,RGB,CMYK,HSL)
-- Aprendi a implementar suporte a vários idiomas diferentes na mesma página.
+- Algoritimos de conversão entre diferentes formatos de representação de cores(HEX,RGB,CMYK,HSL)
+- Aprendi a implementar suporte multilíngue.
 - Desenvolver uma breve explicação sobre cada formato de cor, tipo diferente de degradê e tipo diferente de paleta
 - Desenvolvimento de páginas responsivas utilizando React
 - Hospedar projetos feitos com React utilizando Github Pages
+- Uso da Context API para compartilhamento de propriedades entre vários componentes
 
-###As principais Libs e tecnologias usadas neste projeto foram:
+### As principais Libs e tecnologias usadas neste projeto foram:
 
 `react` `react-syntax-highlighter` `react-markdown` `react-icons` `react-router` `sass` `typescript`
 
 ___
 ## Falhas do projeto
 
-- Web design terrível, Muitas bordas arredondadas, escolha de fonte, espaçamentos e tamanho dos elementos inconsistentes
+- Web design terrível, com muitas bordas arredondadas, escolha de fonte, espaçamentos e tamanho dos elementos inconsistentes
 - Design de interface pouco intuitivo e confuso, novos usuários podem ter dificuldade ao utilizar a plataforma
 
 ___
@@ -52,7 +61,7 @@ ___
 **Este Projeto Não rodará apropriadamente se o navegador não possuir suporte a HTML Canvas.**
 
 ## Este Projeto Consiste num gerenciador de cores com **três ferramentas**.
-Todos elas possuem textos auxliares abaixo que explicam alguns termos usados no contexo da ferramenta.
+Todos elas possuem textos auxiliares abaixo que explicam alguns termos usados no contexto da ferramenta.
 ___
 
 ### Conversor de Cores
