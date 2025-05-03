@@ -1,7 +1,7 @@
 # Colour
 Projeto de gerenciador de cores utilizando React
 
-# Resumo Do Projeto
+## Resumo Do Projeto
 
 Colour é um gerenciador de cores interativo feito com React e TypeScript.
 Ele oferece ferramentas para converter cores entre múltiplos formatos (RGB, HEX, HSL, CMYK),
